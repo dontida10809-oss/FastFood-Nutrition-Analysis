@@ -1,36 +1,36 @@
 # Fast Food Nutrition Analysis – Data Analyst Project
 
-## Problem Statement
-People often consume fast food regularly but lack clear insights into the nutritional content of each menu item, such as calories, fat, sugar, and protein. Without this information, making healthy choices can be difficult.
+ ผู้บริโภคจำนวนมากรับประทานอาหารฟาสต์ฟู้ดเป็นประจำ แต่ยังขาดข้อมูลที่ชัดเจนเกี่ยวกับคุณค่าทางโภชนาการของเมนูแต่ละรายการ เช่น ปริมาณแคลอรี ไขมัน น้ำตาล และโปรตีน ซึ่งการขาดข้อมูลเหล่านี้ทำให้การตัดสินใจเลือกอาหารที่ดีต่อสุขภาพเป็นเรื่องยาก
 
-This project aims to analyze fast food nutritional data to:
+---
 
-- Identify menu items with the highest calories and fat  
-- Compare average nutritional values across different companies  
-- Provide actionable insights for health-conscious consumers
+โครงการนี้มีวัตถุประสงค์เพื่อวิเคราะห์ข้อมูลโภชนาการของอาหารฟาสต์ฟู้ด โดยมีเป้าหมายเพื่อ
+- ระบุเมนูที่มีปริมาณแคลอรีและไขมันสูงที่สุด 
+- เปรียบเทียบค่าโภชนาการเฉลี่ยของเมนูจากบริษัทฟาสต์ฟู้ดแต่ละราย  
+- สรุป Insight ที่สามารถนำไปใช้ได้จริงสำหรับผู้บริโภคที่ใส่ใจสุขภาพ
 
 ---
 
 ## Objective
-- Analyze nutritional information of fast food items  
-- Visualize patterns and correlations in the data  
-- Summarize key insights that can guide healthier choices or menu planning
+- วิเคราะห์ข้อมูลโภชนาการของเมนูอาหารฟาสต์ฟู้ด
+- แสดงรูปแบบและความสัมพันธ์ของข้อมูลด้วยการทำ Visualization
+- สรุป Insight สำคัญที่สามารถใช้เป็นแนวทางในการเลือกอาหารที่ดีต่อสุขภาพ หรือช่วยในการวางแผนเมนู
 
 ---
 
 ## Dataset
-**Fast Food Nutrition Dataset**  
-- Approximately 9 sample items (expandable to real datasets with 50+ items)  
-- Features include:
-  - Company (e.g., McDonald's, KFC, Starbucks)  
-  - Item name  
-  - Calories  
-  - Calories from Fat  
-  - Total Fat, Saturated Fat, Trans Fat  
-  - Cholesterol, Sodium  
-  - Carbohydrates, Fiber, Sugars  
-  - Protein  
-  - Weight Watchers Points
+**Fast Food Nutrition Dataset : https://www.kaggle.com/datasets/joebeachcapital/fast-food**  
+- ประกอบด้วยตัวอย่างข้อมูลเมนูอาหารฟาสต์ฟู้ดประมาณ 9 รายการ (สามารถขยายเป็นชุดข้อมูลจริงที่มีมากกว่า 50 รายการได้)
+- ตัวแปรที่ใช้ในการวิเคราะห์ ได้แก่
+  - บริษัท/แบรนด์ (เช่น McDonald’s, KFC, Starbucks)
+  - ชื่อเมนู 
+  - พลังงาน (Calories)  
+  - พลังงานจากไขมัน (Calories from Fat)  
+  - ปริมาณไขมันทั้งหมด ไขมันอิ่มตัว และไขมันทรานส์ (Total Fat, Saturated Fat, Trans Fat)
+  - คอเลสเตอรอล และโซเดียม (Cholesterol, Sodium)
+  - คาร์โบไฮเดรต ใยอาหาร และน้ำตาล (Carbohydrates, Fiber, Sugars)
+  - โปรตีน (Protein)
+  - คะแนน Weight Watchers
 
 **Sample Data:**
 
@@ -54,16 +54,16 @@ This project aims to analyze fast food nutritional data to:
 ---
 
 ## Analysis Workflow
-1. Data loading and overview  
-2. Data cleaning and preprocessing  
-   - Rename columns for consistency  
-   - Convert numeric columns to proper format  
-3. Exploratory Data Analysis (EDA)  
-   - Distribution of calories  
-   - Average calories by company  
-   - Correlation matrix between nutrients  
-4. Visualization of top calorie items  
-5. Summarizing key insights and recommendations
+1. โหลดข้อมูลและตรวจสอบภาพรวมของชุดข้อมูล
+2. ทำความสะอาดและเตรียมข้อมูล  
+   - ปรับชื่อคอลัมน์ให้สอดคล้องและเข้าใจง่าย 
+   - แปลงข้อมูลตัวเลขให้อยู่ในรูปแบบที่ถูกต้อง 
+3. วิเคราะห์ข้อมูลเชิงสำรวจ (Exploratory Data Analysis: EDA))  
+   - การกระจายของพลังงาน (Calories)
+   - ค่าเฉลี่ยพลังงานแยกตามบริษัท  
+   - วิเคราะห์ความสัมพันธ์ระหว่างสารอาหารด้วย Correlation Matrix  
+4. แสดงผลข้อมูลของเมนูที่มีแคลอรีสูงด้วยกราฟ  
+5. สรุป Insight สำคัญและข้อเสนอแนะที่สามารถนำไปใช้ได้จริง
 
 ---
 
@@ -72,6 +72,11 @@ This project aims to analyze fast food nutritional data to:
 **Calories Distribution**
 
 ![Calories Distribution](images/calories_distribution.png)
+แคลอรีของเมนูฟาสต์ฟู้ดโดยรวม กระจายตัวอย่างไร
+- เมนูส่วนใหญ่อยู่ช่วงแคลอรีต่ำหรือสูง
+- มีเมนูที่แคลอรีสูงมากผิดปกติหรือไม่
+สิ่งที่เจอ (Result)
+
 
 **Average Calories by Company**
 
