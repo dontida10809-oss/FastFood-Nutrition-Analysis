@@ -72,45 +72,103 @@
 **Calories Distribution**
 
 ![Calories Distribution](images/calories_distribution.png)
+
 แคลอรีของเมนูฟาสต์ฟู้ดโดยรวม กระจายตัวอย่างไร
 - เมนูส่วนใหญ่อยู่ช่วงแคลอรีต่ำหรือสูง
 - มีเมนูที่แคลอรีสูงมากผิดปกติหรือไม่
-สิ่งที่เจอ (Result)
+  
+สิ่งที่เจอ (Result) :
+- เมนูส่วนใหญ่อยู่ในช่วงแคลอรีระดับกลาง
+- มีบางเมนูที่แคลอรีสูงมาก ทำให้กราฟมีหางยาว (right-skewed)
 
+Insight :
+- ฟาสต์ฟู้ดไม่ได้มีแคลอรีสูงทุกเมนู
+- แต่มี บางเมนูที่แคลอรีสูงมาก ซึ่งควรระวังเป็นพิเศษ
+- การดู distribution ช่วยให้เข้าใจภาพรวมของข้อมูล ไม่ดูแค่ค่าเฉลี่ย
 
 **Average Calories by Company**
 
 ![Average Calories by Company](images/avg_calories_company.png)
 
+แต่ละบริษัทฟาสต์ฟู้ดมีค่าแคลอรีเฉลี่ยของเมนูแตกต่างกันหรือไม่
+
+สิ่งที่เจอ (Result)
+- ค่าแคลอรีเฉลี่ยของแต่ละบริษัทแตกต่างกันชัดเจน
+- บางบริษัทมีค่าเฉลี่ยแคลอรีสูงกว่าบริษัทอื่น
+
+Insight
+- แบรนด์มีผลต่อแนวโน้มโภชนาการของเมนู
+- ผู้บริโภคสามารถใช้ข้อมูลนี้เพื่อ เลือกแบรนด์ที่มีเมนูแคลอรีเฉลี่ยต่ำกว่า
+- ในเชิง Data Analysis แสดงให้เห็นว่าการจัดกลุ่มข้อมูลช่วยเปรียบเทียบได้ชัดเจนขึ้น
+
 **Correlation Matrix of Nutritional Values**
 
 ![Correlation Matrix](images/correlation_matrix.png)
+
+ค่าทางโภชนาการแต่ละตัวมีความสัมพันธ์กันอย่างไร
+เช่น Calories, Fat, Protein, Carbs
+
+สิ่งที่เจอ (Result) :
+- Calories มีความสัมพันธ์สูงกับ Fat
+- Protein และ Carbs มีความสัมพันธ์กับ Calories แต่ไม่สูงเท่า Fat
+
+Insight :
+- แคลอรีที่สูงมักมาจาก ไขมันเป็นหลัก
+- เมนูแคลอรีสูงไม่ได้แปลว่าโปรตีนสูงเสมอไป
+- Heatmap ช่วยให้เห็นความสัมพันธ์ของหลายตัวแปรได้ชัดในภาพเดียว
 
 **Top 10 Highest Calorie Items**
 
 ![Top 10 Highest Calorie Items](images/top_calories.png)
 
+เมนูไหนมีแคลอรีสูงที่สุดในชุดข้อมูล
+
+สิ่งที่เจอ (Result) :
+- เมนู Top 10 ส่วนใหญ่เป็นเมนูขนาดใหญ่ หรือเมนูที่มีส่วนผสมของไขมันและคาร์โบไฮเดรตสูง
+- ค่าแคลอรีแตกต่างจากเมนูทั่วไปอย่างชัดเจน
+
+Insight :
+- เมนูบางรายการเป็น outliers ที่มีแคลอรีสูงมาก
+- กราฟนี้ช่วยให้ระบุเมนูที่ควรระวังได้ทันที
+- เหมาะสำหรับนำไปใช้ในเชิง recommendation หรือ decision making
+
 ---
 
 ## Key Insights
-1. Menu items with the highest calories usually come from **McDonald's and Pizza Hut**.  
-2. Companies with higher average calories typically serve more **fast food items**.  
-3. Calories are strongly correlated with **Total Fat**, meaning high-fat items tend to be high-calorie.  
-4. Salad and beverage items generally have low calories and are better options for calorie-conscious consumers.  
+1. เมนูที่มีแคลอรีสูงสุดส่วนใหญ่มาจาก McDonald’s และ Pizza Hut
+   - เมนูแคลอรีสูงมาก ๆ มักเป็นพวกเบอร์เกอร์ขนาดใหญ่ พิซซ่า หรือเมนูที่มีชีสและไขมันสูง
+   - แบรนด์ที่ปรากฏบ่อยคือ McDonald’s และ Pizza Hut
+2. บริษัทที่มีค่าแคลอรีเฉลี่ยสูง มักขายเมนูฟาสต์ฟู้ดเป็นหลัก
+   
+   ค่าแคลอรีเฉลี่ยของแต่ละบริษัท (Average Calories by Company)
+   - บริษัทที่ขายอาหารฟาสต์ฟู้ด เช่น เบอร์เกอร์ ไก่ทอด พิซซ่า
+จะมีค่าแคลอรีเฉลี่ยสูงกว่าร้านที่ขายเมนูเบา ๆ
+   
+3. แคลอรีมีความสัมพันธ์สูงกับปริมาณไขมันรวม (Total Fat)
+
+   ความสัมพันธ์ระหว่างสารอาหาร (Correlation Matrix)
+   - ค่า correlation ระหว่าง Calories และ Total Fat สูง
+   - หมายความว่า เมื่อไขมันสูง แคลอรีก็มักจะสูงตาม
+      
+4. เมนูสลัดและเครื่องดื่มมีแคลอรีต่ำ เหมาะกับคนคุมแคลอรี
+
+   ดูการกระจายของแคลอรี (Calories Distribution) และประเภทเมนู
+   - สลัด เครื่องดื่ม หรือเมนูเบา ๆ มีแคลอรีต่ำกว่ากลุ่มฟาสต์ฟู้ดอย่างชัดเจน
+   
 
 ---
 
 ## Business / Practical Recommendations
-- Promote healthier menu options by highlighting low-calorie items (e.g., salads, beverages)  
-- Reformulate menu items to reduce fat while maintaining flavor  
-- Educate consumers with clear nutritional information to guide choices  
-- Use insights to design marketing campaigns for healthier options
+- โปรโมตเมนูเพื่อสุขภาพ โดยเน้นเมนูแคลอรีต่ำ
+- ปรับสูตรอาหาร ลดไขมันแต่ยังคงรสชาติ  
+- ให้ข้อมูลโภชนาการที่ชัดเจนเพื่อช่วยผู้บริโภคตัดสินใจ 
+- ใช้ Insight จากข้อมูลออกแบบแคมเปญการตลาด
 
 ---
 
 ## Conclusion
-This project demonstrates how **data analysis and visualization** can be applied to understand nutritional content in fast food.  
-The insights can help businesses design healthier menus and guide consumers to make informed choices, ultimately promoting better health outcomes.
+โปรเจกต์นี้แสดงให้เห็นการใช้การวิเคราะห์และการทำ visualization เพื่อทำความเข้าใจข้อมูลโภชนาการของอาหารฟาสต์ฟู้ด
+ผลลัพธ์ช่วยให้ธุรกิจออกแบบเมนูที่ดีต่อสุขภาพมากขึ้น และช่วยให้ผู้บริโภคตัดสินใจเลือกอาหารได้อย่างเหมาะสม
 
 ---
 
